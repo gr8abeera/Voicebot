@@ -8,6 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q VoiceBot.zip
+      - name: Fix typo
+        run: sed -i 's/OPTIMIZATIONS_SETTINGS/OPTIMIZATION_SETTINGS/' VoiceBot/app/src/main/java/com/example/voicebot/MainActivity.kt
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
